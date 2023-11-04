@@ -1,18 +1,33 @@
 {
-  "name": "nuxt-app",
+  "name": "portfolio-artarik",
+  "author": "Shirsendu Bairagi <shirsendu2001@gmail.com>",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^20.9.0"
+  },
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
+    "clean": "nuxt cleanup"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.0.0",
+    "@nuxtseo/module": "^2.0.0-beta.40",
     "nuxt": "^3.8.0",
-    "vue": "^3.3.6",
+    "vue": "^3.3.7",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.9.4",
+    "@splidejs/vue-splide": "^0.6.12",
+    "@vueuse/nuxt": "^10.5.0",
+    "nuxt-icons": "^3.2.1"
   }
 }
