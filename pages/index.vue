@@ -7,8 +7,8 @@
 const imagesArray = [
 	[
 		'Ceremony-006-001', 'Ceremony-006-004',
-		'Ceremony-006-007', 'Group-001-002',
-		'Group-003-001', 'Group-006-001',
+		'Group-001-002', 'Group-003-001',
+		'Group-006-001', 'Group-005-001',
 		'Portrait-002-001', 'Portrait-005-001',
 		'Portrait-008-001', 'Portrait-011-001',
 		'Portrait-014-001', 'Wedding-001-001',
@@ -27,8 +27,8 @@ const imagesArray = [
 	],
 	[
 		'Ceremony-006-003', 'Ceremony-006-006',
-		'Group-001-001', 'Group-002-001',
-		'Group-005-001', 'Portrait-001-001',
+		'Ceremony-006-007', 'Group-001-001',
+		'Group-002-001', 'Portrait-001-001',
 		'Portrait-004-001', 'Portrait-007-001',
 		'Portrait-010-001', 'Portrait-013-001',
 		'Portrait-016-001', 'Wedding-001-003',
