@@ -82,6 +82,27 @@ const deviceSpecificImageSlides = computed(() => {
 </script>
 
 <template>
+	<header class="fixed top-0 left-0 right-0 z-50">
+		<nav>
+			<ul class="flex gap-6 justify-center items-center py-4">
+				<li>
+					<NuxtLink href="https://facebook.com" target="_blank">
+						<NuxtIcon name="facebook" class="text-[36px]" />
+					</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink href="https://instagram.com" target="_blank">
+						<NuxtIcon name="instagram" class="text-[36px]" />
+					</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink href="https://youtube.com" target="_blank">
+						<NuxtIcon name="youtube" class="text-[36px]" />
+					</NuxtLink>
+				</li>
+			</ul>
+		</nav>
+	</header>
 	<main class="relative">
 		<h1
 			class="fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl md:text-[6rem] text-white text-center z-10 drop-shadow-lg">
@@ -96,6 +117,6 @@ const deviceSpecificImageSlides = computed(() => {
 		</div>
 		<!-- Overlay -->
 		<div
-			class="fixed left-0 top-0 w-screen h-screen bg-gradient-to-b from-black/30 via-transparent to-black/30 from-1% via-10% to-99% z-20" />
+			class="fixed left-0 top-0 w-screen h-screen bg-gradient-to-b from-black/40 via-transparent to-black/40 from-3% via-20% to-97% z-20" />
 	</main>
 </template>
