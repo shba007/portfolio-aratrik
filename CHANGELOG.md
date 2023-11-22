@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.1.2
+
+### Patch Changes
+
+- 7dc4733: style: new logo added
+
 ## 0.1.1
 
 ### Patch Changes
