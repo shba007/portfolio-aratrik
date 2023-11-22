@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     "@nuxtseo/module",
     '@vueuse/nuxt',
+    'nuxt-gtag',
     'nuxt-icons',
   ],
   image: {
@@ -17,6 +18,6 @@ export default defineNuxtConfig({
     quality: 80,
   },
   site: {
-    url: 'https://aratrik-nandy.me'
+    url: 'https://aratrik-nandy.com'
   },
 })
