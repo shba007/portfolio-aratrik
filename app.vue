@@ -20,6 +20,50 @@ useHead({
     lang: 'en'
   }
 })
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://aratrik-nandy.com',
+    },
+  ],
+})
+
+useSeoMeta({
+  ogType: "profile",
+  title: "Aratrik's Portfolio",
+  ogTitle: "Aratrik's Portfolio",
+  description: "I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
+  ogDescription: "I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
+  ogImage: "https://aratrik-nandy.dev/previews/landing.jpg",
+  ogImageWidth: 1280,
+  ogImageHeight: 640,
+  ogUrl: 'https://aratrik-nandy.com',
+  fbAppId: 966242223397117,
+  twitterCard: "summary_large_image",
+})
+
+useSchemaOrg([
+  definePerson({
+    name: "Aratrik Nandy",
+    description: "I am a professional photographer",
+    image: "https://aratrik-nandy.com/logo.png",
+    sameAs: [
+      "https://www.instagram.com/photos_by_aratrik/",
+      "https://www.facebook.com/profile.php?id=100084481593671"
+    ],
+  }),
+  defineWebSite({
+    name: "Aratrik's Portfolio",
+    description: `I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner`,
+  }),
+  defineWebPage({
+    datePublished: new Date(2023, 11, 22).toISOString(),
+    dateModified: new Date(2023, 11, 22).toISOString(),
+    author: "Shirsendu Bairagi",
+  }),
+])
 </script>
 
 <template>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { breakpointsTailwind } from '@vueuse/core'
 
-
 const imageSlides = {
 	2: [
 		[
@@ -86,28 +85,28 @@ const deviceSpecificImageSlides = computed(() => {
 		<nav>
 			<ul class="flex gap-6 justify-center items-center py-4">
 				<li>
-					<NuxtLink href="https://facebook.com" target="_blank">
+					<NuxtLink href="https://www.facebook.com/profile.php?id=100084481593671" target="_blank">
 						<NuxtIcon name="facebook" class="text-[36px]" />
 					</NuxtLink>
 				</li>
 				<li>
-					<NuxtLink href="https://instagram.com" target="_blank">
+					<NuxtLink href="https://www.instagram.com/photos_by_aratrik/" target="_blank">
 						<NuxtIcon name="instagram" class="text-[36px]" />
 					</NuxtLink>
 				</li>
-				<li>
+				<!-- <li>
 					<NuxtLink href="https://youtube.com" target="_blank">
 						<NuxtIcon name="youtube" class="text-[36px]" />
 					</NuxtLink>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 	</header>
 	<main class="relative">
-		<h1
+		<div
 			class="fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl md:text-[6rem] text-white text-center z-10 drop-shadow-lg">
-			Aratrik Nandy
-		</h1>
+			<NuxtImg src="/logo-light.png" alt="Aratrik Nandy" class="w-[30rem]" />
+		</div>
 		<div class="px-2 md:px-4 w-screen h-screen overflow-hidden">
 			<div class="relative flex gap-2 md:gap-4 h-fit transition-transform ease-linear duration-100"
 				:style="{ transform: `translateY(${-offset}px)` }">
