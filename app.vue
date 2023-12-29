@@ -34,8 +34,8 @@ useSeoMeta({
   ogType: "profile",
   title: "Aratrik's Portfolio",
   ogTitle: "Aratrik's Portfolio",
-  description: "I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
-  ogDescription: "I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
+  description: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
+  ogDescription: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
   ogImage: "https://aratrik-nandy.dev/previews/landing.jpg",
   ogImageWidth: 1280,
   ogImageHeight: 640,
@@ -56,7 +56,7 @@ useSchemaOrg([
   }),
   defineWebSite({
     name: "Aratrik's Portfolio",
-    description: `I am a professional photographer, this is my photographer's portfolio showcasing my skills, projects, and expertise in a visually appealing manner`,
+    description: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
   }),
   defineWebPage({
     datePublished: new Date(2023, 11, 22).toISOString(),
@@ -67,6 +67,8 @@ useSchemaOrg([
 </script>
 
 <template>
+  <NuxtPwaManifest />
+  <NuxtLoadingIndicator />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
