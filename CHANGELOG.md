@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.1.3
+
+### Patch Changes
+
+- a5add3f: chore: deploy script added, pwa added, pkgs updated
+
 ## 0.1.2
 
 ### Patch Changes
