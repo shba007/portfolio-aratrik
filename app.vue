@@ -1,7 +1,11 @@
 <script setup lang="ts">
 useHead({
-  title: "Aratrik's Portfolio",
+  title: "Aratrik Nandy",
   link: [
+    {
+      rel: 'canonical',
+      href: 'https://aratrik-nandy.com',
+    },
     {
       rel: 'preconnect',
       href: 'https://fonts.gstatic.com',
@@ -13,7 +17,7 @@ useHead({
     },
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;1,400&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500&display=swap',
     },
   ],
   htmlAttrs: {
@@ -21,19 +25,10 @@ useHead({
   }
 })
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: 'https://aratrik-nandy.com',
-    },
-  ],
-})
-
 useSeoMeta({
   ogType: "profile",
-  title: "Aratrik's Portfolio",
-  ogTitle: "Aratrik's Portfolio",
+  title: "Aratrik Nandy",
+  ogTitle: "Aratrik Nandy",
   description: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
   ogDescription: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
   ogImage: "https://aratrik-nandy.dev/previews/landing.jpg",
@@ -55,7 +50,7 @@ useSchemaOrg([
     ],
   }),
   defineWebSite({
-    name: "Aratrik's Portfolio",
+    name: "Aratrik Nandy",
     description: "I am a professional photographer, this is my portfolio showcasing my skills, projects, and expertise in a visually appealing manner",
   }),
   defineWebPage({
@@ -68,7 +63,7 @@ useSchemaOrg([
 
 <template>
   <NuxtPwaManifest />
-  <NuxtLoadingIndicator />
+  <!-- <NuxtLoadingIndicator /> -->
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -95,7 +90,7 @@ html {
 }
 
 body {
-  @apply h-screen font-body text-white bg-black overflow-hidden;
+  @apply min-h-screen font-body text-white bg-dark-400 overflow-x-hidden;
 }
 
 .nuxt-icon>svg {

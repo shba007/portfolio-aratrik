@@ -1,16 +1,21 @@
+<script setup lang="ts">
+function onNavigate(section: string) {
+  useTrackEvent('navigate', {
+    section
+  })
+}
+</script>
+
 <template>
-	<nav>
-		<ul class="flex gap-6 justify-center items-center py-4">
-			<li>
-				<NuxtLink to="https://www.facebook.com/profile.php?id=100084481593671" target="_blank">
-					<NuxtIcon name="facebook" class="text-[36px]" />
-				</NuxtLink>
-			</li>
-			<li>
-				<NuxtLink to="https://www.instagram.com/photos_by_aratrik/" target="_blank">
-					<NuxtIcon name="instagram" class="text-[36px]" />
-				</NuxtLink>
-			</li>
+	<nav class="relative grid grid-cols-3 items-center z-20">
+		<NuxtLink to="/">
+			<NuxtIcon name="logo-full" class="text-[96px] md:text-[128px]" />
+		</NuxtLink>
+		<ul class="hidden md:flex gap-8">
+			<li><NuxtLink to="#featured" @click="onNavigate('featured')">Featured</NuxtLink></li>
+			<li><NuxtLink to="#gallery" @click="onNavigate('gallery')">Gallery</NuxtLink></li>
+			<li><NuxtLink to="#pricing" @click="onNavigate('pricing')">Pricing</NuxtLink></li>
+			<li><NuxtLink to="#testimonials" @click="onNavigate('testimonials')">Testimonials</NuxtLink></li>
 		</ul>
 	</nav>
 </template>

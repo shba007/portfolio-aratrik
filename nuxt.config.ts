@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/image',
+    '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@nuxtseo/module',
     '@vite-pwa/nuxt',
@@ -21,13 +22,38 @@ export default defineNuxtConfig({
   site: {
     url: 'https://aratrik-nandy.com'
   },
+  colorMode: {
+    preference: 'dark',
+    fallback: 'light',
+    classSuffix: '',
+  },
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
       name: 'Aratrik Nandy\'s Portfolio',
       short_name: 'Aratrik Nandy',
-      theme_color: '#0891B2',
+      theme_color: '#CABC7C',
       icons: [
+        {
+          src: 'logo-48.png',
+          sizes: '48x48',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-72.png',
+          sizes: '72x72',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-96.png',
+          sizes: '96x96',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-144.png',
+          sizes: '144x144',
+          type: 'image/png',
+        },
         {
           src: 'logo-192.png',
           sizes: '192x192',
