@@ -1,3 +1,17 @@
+<script setup lang="ts">
+const isModelContactOpen = ref<boolean>(false)
+
+function onContact(action: boolean) {
+	if (action) {
+		isModelContactOpen.value = true
+		useTrackEvent('contact_open')
+	} else {
+		isModelContactOpen.value = false
+		useTrackEvent('contact_close')
+	}
+}
+</script>
+
 <template>
 	<header class="absolute top-0 left-0 right-0 mx-auto px-4 md:px-16 max-w-[90rem]">
 		<Navbar />
@@ -5,9 +19,10 @@
 	<main class="relative flex flex-col gap-4 md:gap-16 mx-auto p-4 md:p-16 !pb-0 max-w-[90rem] overflow-hidden">
 		<SectionHero />
 		<SectionFeatured />
-		<!-- <SectionGallery /> -->
+		<SectionGallery />
 		<!-- <SectionPricing /> -->
 		<!-- <SectionTestimonial /> -->
+		<ModelContact :is-open="isModelContactOpen" @close="onContact(false)" />
 	</main>
 	<footer
 		class="relative grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 items-end m-4 md:m-8 rounded-3xl p-6 md:p-8 h-52 bg-dark-500">

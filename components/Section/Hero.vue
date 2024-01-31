@@ -1,6 +1,6 @@
 <template>
 	<section id="hero"
-		class="relative grid grid-rows-[repeat(3,min-content)] md:grid-rows-1 grid-cols-3 items-center gap-y-[4.5rem] mt-24 md:m-0 min-h-screen">
+		class="relative grid grid-rows-[repeat(3,min-content)] md:grid-rows-1 grid-cols-3 items-center gap-y-[4.5rem] mt-24 md:m-0 min-h-[calc(100vh-6rem)] md:min-h-screen">
 		<div class="row-start-1 !col-start-1 col-span-3 md:col-span-2 flex flex-col gap-6 text-center md:text-left">
 			<h1 class="text-3xl md:text-5xl font-semi-bold">Capture the <br />memorable moments</h1>
 			<p class="text-lg md:text-xl leading-9 tracking-wide">Moments are too precious, <br />it should be chariest life
