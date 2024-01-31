@@ -19,20 +19,24 @@ export default defineNuxtConfig({
     width: 1024,
     quality: 80,
   },
-  site: {
-    url: 'https://aratrik-nandy.com'
-  },
   colorMode: {
     preference: 'dark',
     fallback: 'light',
     classSuffix: '',
   },
+  site: {
+    name: 'Aratrik Nandy',
+    url: 'https://aratrik-nandy.com'
+  },
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Aratrik Nandy\'s Portfolio',
+      name: 'Aratrik Nandy',
       short_name: 'Aratrik Nandy',
+      description: 'Aratrik Nandy is a Professional Photographer/Videographer',
       theme_color: '#CABC7C',
+      background_color: "#CABC7C",
+      orientation: 'portrait',
       icons: [
         {
           src: 'logo-48.png',
@@ -71,9 +75,53 @@ export default defineNuxtConfig({
           purpose: 'any maskable',
         },
       ],
+      screenshots: [
+        {
+          src: 'screenshot-desktop-1.webp',
+          sizes: '1024x576',
+          type: 'image/webp',
+          form_factor: 'wide',
+          label: 'Screenshot 1'
+        },
+        {
+          src: 'screenshot-desktop-2.webp',
+          sizes: '1024x576',
+          type: 'image/webp',
+          form_factor: 'wide',
+          label: 'Screenshot 2'
+        },
+        {
+          src: 'screenshot-desktop-3.webp',
+          sizes: '1024x576',
+          type: 'image/webp',
+          form_factor: 'wide',
+          label: 'Screenshot 3'
+        },
+        {
+          src: 'screenshot-mobile-1.webp',
+          sizes: '576x1024',
+          type: 'image/webp',
+          form_factor: 'narrow',
+          label: 'Screenshot 1'
+        },
+        {
+          src: 'screenshot-mobile-2.webp',
+          sizes: '576x1024',
+          type: 'image/webp',
+          form_factor: 'narrow',
+          label: 'Screenshot 2'
+        },
+        {
+          src: 'screenshot-mobile-3.webp',
+          sizes: '576x1024',
+          type: 'image/webp',
+          form_factor: 'narrow',
+          label: 'Screenshot 3'
+        },
+      ]
     },
     workbox: {
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      globPatterns: ['**/*.{js,css,html,jpg,png,webp,svg,ico}'],
     },
     client: {
       installPrompt: true,
