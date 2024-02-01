@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const title = `Professional Photographer/Videographer in Kolkata`
-const description = ``
-const url = "https://aratrik-nandy.com"
-
+const description = `Elevate your visual storytelling with professional photographer/videographer Aratrik Nandy. 
+From timeless portraits to cinematic narratives, experience the art of visual mastery. 
+Book Aratrik Nandy for unparalleled creativity and impeccable craftsmanship.`
+const url = "https://redcatpictures.com"
 
 useHead({
   link: [

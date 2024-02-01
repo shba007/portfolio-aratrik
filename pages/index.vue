@@ -17,7 +17,7 @@ function onContact(action: boolean) {
 		<Navbar />
 	</header>
 	<main class="relative flex flex-col gap-4 md:gap-16 mx-auto p-4 md:p-16 !pb-0 max-w-[90rem] overflow-hidden">
-		<SectionHero />
+		<SectionHero @contact="onContact(true)" />
 		<SectionFeatured />
 		<SectionGallery />
 		<!-- <SectionPricing /> -->
@@ -34,7 +34,8 @@ function onContact(action: boolean) {
 			</NuxtLink>
 		</div>
 		<CTAButton :primary="false"
-			class="row-start-1 md:row-start-2 col-start-1 md:col-start-2 col-span-2 md:col-span-1 justify-self-center self-center" />
+			class="row-start-1 md:row-start-2 col-start-1 md:col-start-2 col-span-2 md:col-span-1 justify-self-center self-center"
+			@click="onContact(true)" />
 		<ul class="row-start-2 md:row-start-3 col-start-2 md:col-start-3 justify-self-end flex gap-4 md:gap-8">
 			<li>
 				<NuxtLink to="https://www.facebook.com/profile.php?id=100084481593671" target="_blank">
