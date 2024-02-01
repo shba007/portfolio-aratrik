@@ -26,17 +26,34 @@ export default defineNuxtConfig({
   },
   site: {
     name: 'Aratrik Nandy',
-    url: 'https://aratrik-nandy.com'
+    url: 'https://redcatpictures.com'
   },
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Aratrik Nandy',
-      short_name: 'Aratrik Nandy',
+      name: 'Red Cat Pictures',
+      short_name: 'Red Cat Pictures',
       description: 'Aratrik Nandy is a Professional Photographer/Videographer',
       theme_color: '#CABC7C',
-      background_color: "#CABC7C",
+      background_color: '#CABC7C',
       orientation: 'portrait',
+      start_url: 'https://redcatpictures.com',
+      /* shortcuts: [
+        {
+          'name': 'Book a Session by call',
+          'short_name': 'Book Session (Call)',
+          'description': 'Book a photography/videography session by call',
+          'url': 'tel:+91801-727-5285',
+          'icons': [{ 'src': '/icons/play-later.png', 'sizes': '192x192' }]
+        },
+        {
+          'name': 'Book a Session by whatsapp',
+          'short_name': 'Book Session (Whatsapp)',
+          'description': 'Book a photography/videography session by whatsapp',
+          'url': 'https://wa.me/918017275285',
+          'icons': [{ 'src': '/icons/play-later.png', 'sizes': '192x192' }]
+        }
+      ], */
       icons: [
         {
           src: 'logo-48.png',
@@ -98,6 +115,13 @@ export default defineNuxtConfig({
           label: 'Screenshot 3'
         },
         {
+          src: 'screenshot-desktop-4.webp',
+          sizes: '1024x576',
+          type: 'image/webp',
+          form_factor: 'wide',
+          label: 'Screenshot 4'
+        },
+        {
           src: 'screenshot-mobile-1.webp',
           sizes: '576x1024',
           type: 'image/webp',
@@ -117,6 +141,13 @@ export default defineNuxtConfig({
           type: 'image/webp',
           form_factor: 'narrow',
           label: 'Screenshot 3'
+        },
+        {
+          src: 'screenshot-mobile-4.webp',
+          sizes: '576x1024',
+          type: 'image/webp',
+          form_factor: 'narrow',
+          label: 'Screenshot 4'
         },
       ]
     },
