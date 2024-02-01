@@ -1,5 +1,16 @@
 # portfolio-artarik
 
+## 0.2.0
+
+### Minor Changes
+
+- 573129f: feat: design upgraded
+- fa5ceb5: feat: Gallery Section added
+
+### Patch Changes
+
+- a5add3f: chore: deploy script added, pwa added, pkgs updated
+
 ## 0.1.2
 
 ### Patch Changes
