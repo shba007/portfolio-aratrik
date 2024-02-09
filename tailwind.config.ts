@@ -41,9 +41,9 @@ module.exports = {
       transparent: 'transparent',
       white: '#FFFFFF',
       light: {
-        400: '#EDF0F5',
-        500: '',
-        600: ''
+        400: '#BDC9E0',
+        500: '#D9D9D9',
+        600: '#ABABAB',
       },
       black: '#000000',
       dark: {

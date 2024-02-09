@@ -89,11 +89,11 @@ useSchemaOrg([
 }
 
 *::-webkit-scrollbar {
-  @apply block w-[6px] bg-dark-400;
+  @apply block w-[6px] bg-light-400 dark:bg-dark-400;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply rounded-md bg-dark-600;
+  @apply rounded-md bg-light-600 dark:bg-dark-600;
 }
 
 html {
@@ -101,7 +101,7 @@ html {
 }
 
 body {
-  @apply relative min-h-screen font-body text-white bg-dark-400 overflow-x-hidden;
+  @apply relative min-h-screen font-body text-black dark:text-white bg-light-400 dark:bg-dark-400 overflow-x-hidden;
 }
 
 .nuxt-icon>svg {

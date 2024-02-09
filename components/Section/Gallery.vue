@@ -95,11 +95,9 @@ function objectToClass({ row, col }: {
 		</div>
 		<div class="relative grid grid-rows-6 md:grid-rows-3 grid-cols-2 md:grid-cols-4 gap-4 mx-0 md:-mx-12">
 			<ClientOnly>
-				<template v-for="{ position, size, url, alt } in images" :key="alt">
-					<img :src="`/images/photos/${url}.webp`" :alt="alt"
-						class="rounded-md w-full h-full object-cover object-top overflow-hidden"
-						:class="objectToClass(position, size)" />
-				</template>
+				<img v-for="{ position, size, url, alt } in images" :key="alt" :src="`/images/photos/${url}.webp`" :alt="alt"
+					loading="lazy" class="rounded-md w-full h-full object-cover object-top overflow-hidden"
+					:class="objectToClass(position, size)" />
 			</ClientOnly>
 		</div>
 	</section>

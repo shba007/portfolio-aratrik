@@ -25,7 +25,7 @@ function onContact(action: boolean) {
 		<ModelContact :is-open="isModelContactOpen" @close="onContact(false)" />
 	</main>
 	<footer
-		class="relative grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 items-end m-4 md:m-8 rounded-3xl p-6 md:p-8 h-52 bg-dark-500">
+		class="relative grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 items-end m-4 md:m-8 rounded-3xl p-6 md:p-8 h-52 bg-white dark:bg-dark-500">
 		<div class="row-start-2 md:row-start-3 col-start-1 justify-self-start flex flex-col gap-2 text-sm">
 			<span>&copy; 2024-2025</span>
 			<NuxtLink to="https://shirsendu-bairagi.dev" target="__blank" class="flex items-center gap-1">
@@ -36,7 +36,8 @@ function onContact(action: boolean) {
 		<CTAButton :primary="false"
 			class="row-start-1 md:row-start-2 col-start-1 md:col-start-2 col-span-2 md:col-span-1 justify-self-center self-center"
 			@click="onContact(true)" />
-		<ul class="row-start-2 md:row-start-3 col-start-2 md:col-start-3 justify-self-end flex gap-4 md:gap-8">
+		<ul
+			class="row-start-2 md:row-start-3 col-start-2 md:col-start-3 justify-self-end flex gap-4 md:gap-8 text-light-400 dark:text-dark-400">
 			<li>
 				<NuxtLink to="https://www.facebook.com/profile.php?id=100084481593671" target="_blank">
 					<NuxtIcon name="facebook" class="text-[28px] md:text-[40px]" />

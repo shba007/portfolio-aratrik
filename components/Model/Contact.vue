@@ -33,7 +33,7 @@ function flippedClass(method: string) {
     <span class="col-span-2 mx-auto text-lg mb-2">Book a Session via</span>
     <NuxtLink v-for="{ method, icon, link } of methods" :key="method" :to="link" target="__blank" :aria-label="method"
       @click="contact(method)"
-      class="flex flex-col items-center justify-center gap-3 px-9 pt-6 text-black aspect-square cursor-pointer transition-colors"
+      class="flex flex-col items-center justify-center gap-3 px-9 pt-6 text-white dark:text-black aspect-square cursor-pointer transition-colors"
       :class="flippedClass(method)">
       <NuxtIcon :name="icon" class="text-[56px]" :class="flippedClass(method)" />
       <span class="font-semi-bold capitalize" :class="flippedClass(method)">{{ method }}</span>
