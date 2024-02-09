@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.2.2
+
+### Patch Changes
+
+- a764a1a: chore: pwa assets added
+
 ## 0.2.1
 
 ### Patch Changes
