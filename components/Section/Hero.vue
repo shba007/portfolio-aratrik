@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const emit = defineEmits<{ (event: 'contact'): void }>()
+const mode = "light"
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const emit = defineEmits<{ (event: 'contact'): void }>()
 			<CTAButton class="hidden md:flex" @click="emit('contact')" />
 		</div>
 		<div class="relative row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 -z-10">
-			<NuxtImg src="/images/background.webp" alt="background" width="1200"
+			<img :src="`/images/background-${mode}.webp`" alt="background"
 				class="relative right-0 bottom-0 -translate-y-[10%] -translate-x-[25%] md:-translate-x-[10%] scale-[165%] md:scale-125" />
 		</div>
 		<CTAButton class="md:hidden row-start-3 col-start-2 justify-self-center items-center" @click="emit('contact')" />

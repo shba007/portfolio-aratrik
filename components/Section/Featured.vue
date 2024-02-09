@@ -54,7 +54,7 @@ const imageSlides = computed(() => {
 			<ClientOnly>
 				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2 md:gap-4"
 					:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
-					<img v-for="image in images" :key="image" :src="`/images/photos/${image}.webp`" :alt="image"
+					<img v-for="image in images" :key="image" :src="`/images/photos/${image}.webp`" :alt="image" loading="lazy"
 						class="w-full object-cover rounded-sm md:rounded-md" />
 				</div>
 			</ClientOnly>
