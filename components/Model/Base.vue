@@ -14,7 +14,7 @@ const emit = defineEmits<{
           class="relative mx-4 md:mx-auto max-w-[700px] w-full h-min rounded-xl text-black dark:text-white bg-light-400 dark:bg-dark-400"
           :class="innerClass">
           <button aria-label="close" class="absolute top-2 right-2" @click="emit('close')">
-            <NuxtIcon name="cross" class="text-[24px] hover:text-alert-500 transition-colors" />
+            <NuxtIcon name="cross" class="text-[24px] hover:text-alert-500 transition-colors duration-500 ease-out" />
           </button>
           <slot />
         </dialog>
@@ -26,7 +26,7 @@ const emit = defineEmits<{
 <style scoped>
 .v-enter-active,
 .v-leave-active {
-  @apply transition-opacity;
+  @apply transition-opacity duration-500 ease-out;
 }
 
 .v-enter-from,

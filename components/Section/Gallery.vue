@@ -88,7 +88,7 @@ function objectToClass({ row, col }: {
 </script>
 
 <template>
-	<section id="gallery" class="relative min-h-screen">
+	<section id="gallery" class="relative h-fit">
 		<div class="flex gap-4 mx-auto mb-4 md:mb-12 w-fit">
 			<TabButton v-for="{ icon, title } in tabs" :key="title" :icon="icon" :title="title" :active="activeTab === title"
 				@click="changeActiveTab(title)" />

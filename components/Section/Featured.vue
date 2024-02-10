@@ -23,17 +23,16 @@ const images = [
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
 
-const container = ref()
-const offset = useInterval(25)
-
-const { y } = useScroll(container, { behavior: 'smooth' })
-
-watch(y, (value) => {
-	offset.value = value
-})
+const offset = useInterval(50)
+const isViewVisible = ref(true)
 
 watch(offset, (value) => {
-	y.value = value
+	if (offset.value > -250)
+		isViewVisible.value = true
+	if (value > 1850)
+		isViewVisible.value = false
+	if (value > 1900)
+		offset.value = -300
 })
 
 const imageSlides = computed(() => {
@@ -49,8 +48,9 @@ const imageSlides = computed(() => {
 </script>
 
 <template>
-	<section ref="container" id="featured" class="relative mx-0 md:-mx-12 max-h-screen overflow-y-scroll scrollbar-hidden">
-		<div class="flex gap-2 md:gap-4">
+	<section id="featured" class="relative mx-0 md:-mx-12 h-screen overflow-hidden">
+		<div class="relative flex gap-2 md:gap-4 transition-all ease-linear" :class="{ 'invisible': !isViewVisible }"
+			:style="{ translate: `0 ${-(offset * 5)}px` }">
 			<ClientOnly>
 				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2 md:gap-4"
 					:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
