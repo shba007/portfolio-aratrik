@@ -33,7 +33,7 @@ function flippedClass(method: string) {
     <span class="col-span-2 mx-auto text-lg mb-2">Book a Session via</span>
     <NuxtLink v-for="{ method, icon, link } of methods" :key="method" :to="link" target="__blank" :aria-label="method"
       @click="contact(method)"
-      class="flex flex-col items-center justify-center gap-3 px-9 pt-6 text-white dark:text-black aspect-square cursor-pointer transition-colors"
+      class="flex flex-col items-center justify-center gap-3 px-9 pt-6 text-white dark:text-black aspect-square cursor-pointer transition-colors duration-500 ease-in-out"
       :class="flippedClass(method)">
       <NuxtIcon :name="icon" class="text-[56px]" :class="flippedClass(method)" />
       <span class="font-semi-bold capitalize" :class="flippedClass(method)">{{ method }}</span>
@@ -43,7 +43,7 @@ function flippedClass(method: string) {
 
 <style scoped>
 a {
-  @apply bg-primary-500 hover:bg-primary-400 drop-shadow-[inset_-2px_2px_8px_0_rgba(0,0,0,0.25)] hover:drop-shadow-[inset_-4px_4px_8px_0_rgba(0,0,0,0.25)] transition-all;
+  @apply bg-primary-500 hover:bg-primary-400 drop-shadow-[inset_-2px_2px_8px_0_rgba(0,0,0,0.25)] hover:drop-shadow-[inset_-4px_4px_8px_0_rgba(0,0,0,0.25)] transition-all duration-500 ease-out;
   clip-path: polygon(100% 100%, -0.212% 100%, -0.212% 0%, 64.491% 9.708%, 64.491% 9.708%, 70.473% 10.99%, 76.066% 12.952%, 81.213% 15.533%, 85.858% 18.678%, 89.943% 22.327%, 93.412% 26.422%, 96.21% 30.906%, 98.278% 35.72%, 99.56% 40.806%, 100% 46.106%, 100% 100%);
 }
 
