@@ -30,8 +30,10 @@ onBeforeMount(() => {
 		<ModelContact :is-open="isModelContactOpen" @close="onContact(false)" />
 	</main>
 	<footer
-		class="relative grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 items-end m-4 md:m-8 rounded-3xl p-6 md:p-8 h-52 bg-light-500 dark:bg-dark-500 text-light-400 dark:text-light-600">
-		<div class="row-start-2 md:row-start-3 col-start-1 justify-self-start flex flex-col gap-2 text-sm">
+		class="relative grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 items-end m-4 md:m-8 rounded-3xl p-6 md:p-8 h-52 bg-light-500 dark:bg-dark-500 text-light-400 dark:text-light-600 overflow-hidden">
+		<div class="relative row-start-2 md:row-start-3 col-start-1 justify-self-start flex flex-col gap-2 text-sm">
+			<NuxtIcon name="logo"
+				class="absolute top-0 -left-[60px] md:-left-[104px] -translate-y-[56%] md:-translate-y-[37%] text-[309px] md:text-[560px] text-white opacity-10" />
 			<span>&copy; 2024-2025</span>
 			<NuxtLink to="https://shirsendu-bairagi.dev" target="__blank" class="flex items-center gap-1">
 				<span>Made by</span>
