@@ -1,5 +1,15 @@
 # portfolio-artarik
 
+## 0.3.0
+
+### Minor Changes
+
+- c269509: fix: featured section dynamic range added
+
+### Patch Changes
+
+- 98b12cf: style: light color palette fixed, feature section changed to unscrollable
+
 ## 0.2.2
 
 ### Patch Changes
