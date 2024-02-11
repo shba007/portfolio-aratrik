@@ -22,17 +22,22 @@ const images = [
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
+const container = ref<HTMLDivElement | null>(null)
+const { height: containerHeight } = useElementSize(container)
+const slider = ref<HTMLDivElement | null>(null)
+const { height: sliderHeight } = useElementSize(slider)
 
-const offset = useInterval(50)
+const counter = useInterval(75)
+const offset = computed(() => counter.value * 5)
 const isViewVisible = ref(true)
 
 watch(offset, (value) => {
-	if (offset.value > -250)
+	if (offset.value > -(containerHeight.value + 50))
 		isViewVisible.value = true
-	if (value > 1850)
+	if (value > sliderHeight.value)
 		isViewVisible.value = false
-	if (value > 1900)
-		offset.value = -300
+	if (value > sliderHeight.value + 50)
+		counter.value = -(containerHeight.value + 100) / 5
 })
 
 const imageSlides = computed(() => {
@@ -48,9 +53,9 @@ const imageSlides = computed(() => {
 </script>
 
 <template>
-	<section id="featured" class="relative mx-0 md:-mx-12 h-screen overflow-hidden">
-		<div class="relative flex gap-2 md:gap-4 transition-all ease-linear" :class="{ 'invisible': !isViewVisible }"
-			:style="{ translate: `0 ${-(offset * 5)}px` }">
+	<section ref="container" id="featured" class="relative mx-0 md:-mx-12 h-screen overflow-hidden">
+		<div ref="slider" class="relative flex gap-2 md:gap-4 transition-all ease-linear"
+			:class="{ 'invisible': !isViewVisible }" :style="{ translate: `0 ${-offset}px` }">
 			<ClientOnly>
 				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2 md:gap-4"
 					:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">

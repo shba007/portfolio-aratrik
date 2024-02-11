@@ -1,8 +1,8 @@
 <script setup lang="ts">
 function onNavigate(section: string) {
-  useTrackEvent('navigate', {
-    section
-  })
+	useTrackEvent('navigate', {
+		section
+	})
 }
 </script>
 
@@ -17,5 +17,8 @@ function onNavigate(section: string) {
 			<li><NuxtLink to="#pricing" @click="onNavigate('pricing')">Pricing</NuxtLink></li>
 			<li><NuxtLink to="#testimonials" @click="onNavigate('testimonials')">Testimonials</NuxtLink></li>
 		</ul>
+		<div class="col-start-3 justify-self-end -translate-y-1/2">
+			<ColorModeButton />
+		</div>
 	</nav>
 </template>
