@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     quality: 80,
   },
   colorMode: {
-    preference: 'light',
+    preference: 'system',
     fallback: 'light',
     classSuffix: '',
   },

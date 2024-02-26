@@ -12,7 +12,7 @@ const emit = defineEmits<{ (event: 'contact'): void }>()
 			<CTAButton class="hidden md:flex" @click="emit('contact')" />
 		</div>
 		<div
-			class="relative row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 mx-auto md:max-w-[35rem] lg:max-w-full -z-10">
+			class="relative row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 mx-auto sm:max-w-[32rem] lg:max-w-full -z-10">
 			<img :src="`/images/background-light.webp`" alt="background"
 				class="dark:hidden relative right-0 bottom-0 -translate-y-[10%] -translate-x-[25%] md:-translate-x-[10%] scale-[165%] lg:scale-125" />
 			<img :src="`/images/background-dark.webp`" alt="background"
