@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.4.0
+
+### Minor Changes
+
+- bd6923b: feat: added pricing model
+
 ## 0.3.0
 
 ### Minor Changes
