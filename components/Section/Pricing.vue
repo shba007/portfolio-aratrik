@@ -29,23 +29,36 @@ const prices = [{
 
 const splideOption: Options = {
 	mediaQuery: 'min',
-	arrows: false,
+	arrows: true,
+	pagination: false,
 	trimSpace: true,
+	focus: 'center',
 	perPage: 1,
-	padding: '2.5rem',
-	gap: '0.5rem',
+	padding: '1rem',
+	gap: '-2.5rem',
 	breakpoints: {
 		640: {
-			perPage: 3,
-			padding: 0,
-			gap: '1.5rem',
-			focus: 'center',
 			destroy: true,
+			arrows: false,
+			// perPage: 3,
+			// padding: 0,
+			// gap: '1.5rem',
 		}
 	}
 };
 
 const activeSlideIndex = ref(1)
+const isModelContactOpen = ref<boolean>(false)
+
+function onContact(action: boolean) {
+	if (action) {
+		isModelContactOpen.value = true
+		useTrackEvent('contact_open')
+	} else {
+		isModelContactOpen.value = false
+		useTrackEvent('contact_close')
+	}
+}
 </script>
 
 <template>
@@ -53,16 +66,30 @@ const activeSlideIndex = ref(1)
 		<Splide :options="splideOption" tag="div" :has-track="false" class=""
 			@move="(slideIndex: number) => activeSlideIndex = slideIndex">
 			<SplideTrack>
-				<SplideSlide v-for="{ title, price, points }, index in prices" :key="title">
-					<PriceModel :active="index === activeSlideIndex" :title="title" :price="price" :points="points" />
+				<SplideSlide v-for="{ title, price, points }, index in prices" :key="title" class="flex justify-center">
+					<PriceModel :active="index === activeSlideIndex" :title="title" :price="price" :points="points"
+						@contact="onContact(true)" />
 				</SplideSlide>
 			</SplideTrack>
+			<div class="splide__arrows absolute top-1/2 left-0 right-0 flex justify-between text-[24px] text-black">
+				<button class="relative splide__arrow splide__arrow--prev arrow">
+					<NuxtIcon name="chevron-bold" class="relative z-10" />
+				</button>
+				<button class="relative splide__arrow splide__arrow--next arrow scale-x-[-1]">
+					<NuxtIcon name="chevron-bold" class="relative z-10" />
+				</button>
+			</div>
 		</Splide>
+		<ModelContact :is-open="isModelContactOpen" @close="onContact(false)" />
 	</section>
 </template>
 
-<style>
-.splide__list {
-	@apply md:!flex md:justify-between md:items-center md:w-full
+<style scoped>
+:deep(.splide__list) {
+	@apply md:!flex md:justify-between md:items-center md:w-full;
+}
+
+.arrow {
+	@apply before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:-translate-x-1/2 before:block before:rounded-xl before:size-16 before:rotate-45 before:bg-primary-500 active:before:bg-primary-400 before:transition-colors before:duration-500 before:ease-out;
 }
 </style>
