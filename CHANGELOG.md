@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.4.1
+
+### Patch Changes
+
+- 84cc248: fix: pricing card theme and call to action fixed
+
 ## 0.4.0
 
 ### Minor Changes
