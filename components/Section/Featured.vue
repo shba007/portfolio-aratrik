@@ -17,7 +17,9 @@ const images = [
 	'Wedding-001-004', 'Wedding-001-005', 'Wedding-001-006',
 	'Wedding-001-007', 'Wedding-001-008', 'Wedding-001-009',
 	'Wedding-001-010', 'Wedding-001-011', 'Wedding-001-012',
-	'Wedding-001-013', 'Wedding-001-014'
+	'Wedding-001-013', 'Wedding-001-014', 'Food-001-001',
+	'Food-001-002', 'Food-001-003', 'Food-001-004',
+	'Food-001-005', 'Food-001-006', 'Food-001-007'
 ]
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
