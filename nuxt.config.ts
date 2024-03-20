@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxtjs/color-mode',
+    '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
-    '@nuxtseo/module',
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
     'nuxt-gtag',

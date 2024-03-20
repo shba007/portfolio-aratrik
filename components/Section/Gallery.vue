@@ -20,10 +20,9 @@ const mdDevices = breakpoints.greaterOrEqual('sm')
 
 const categoryImages = {
 	food: [
-		'Portrait-002-001', 'Portrait-003-001', 'Portrait-004-001',
-		'Portrait-005-001', 'Portrait-006-001', 'Portrait-007-001',
-		'Portrait-008-001', 'Portrait-009-001', 'Portrait-010-001',
-		'Portrait-011-001', 'Portrait-012-001', 'Portrait-013-001',
+		'Food-001-003', 'Food-001-001', 'Food-001-007',
+		'Food-001-004', 'Food-001-006', 'Food-001-002',
+		'Food-001-005',
 	],
 	product: [
 		'Wedding-001-002', 'Wedding-001-003', 'Wedding-001-004',
