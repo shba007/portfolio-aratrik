@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 0.4.2
+
+### Patch Changes
+
+- 3e83bd4: chore: food images added
+
 ## 0.4.1
 
 ### Patch Changes
