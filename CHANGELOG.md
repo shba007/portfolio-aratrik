@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.1.0
+
+### Minor Changes
+
+- 47cd30f: feat: updated hero section
+
 ## 1.0.1
 
 ### Patch Changes
