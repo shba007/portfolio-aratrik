@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.0.1
+
+### Patch Changes
+
+- c89d64f: fix: auto crop fixed
+
 ## 1.0.0
 
 ### Major Changes
