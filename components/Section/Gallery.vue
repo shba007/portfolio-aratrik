@@ -20,7 +20,7 @@ const mdDevices = breakpoints.greaterOrEqual('sm')
 
 const categoryImages = {
 	food: [
-		'2c3e85c4-5562-4bc6-91bb-5ffb2cf95160',
+		'69dcabdd-d9da-419a-a823-285d34db4f95',
 		'badf3211-af49-4991-b573-303d8f485440',
 		'd4857636-289b-4e4d-a29f-8e3a42617eb4',
 		'9d7e283c-f017-40f5-b688-8af1a6f5d84c',
@@ -35,7 +35,7 @@ const categoryImages = {
 	product: [
 		'f0bd8b64-1730-412e-a5cf-a9161c393ce6',
 		'9a34beb4-211d-418b-afe4-727b36a64039',
-		'b5e08440-705e-4df5-95dc-2628c7d68d3d',
+		'c048ef8c-20d4-4b6b-be6f-103a56b2ba8b',
 		'2d58b5fe-7552-4022-8bda-0f22a042eda2',
 		'76d57406-39d6-42bb-b1e4-5b0c2d0f48e3',
 		'c2a0dbd9-0ad4-4526-9f2f-3e95c2e3957d',
@@ -103,12 +103,21 @@ function autoScaling({ row, col }: {
 	row: { start: number; span: number };
 	col: { start: number; span: number };
 }) {
-	if (row.start === 1 && col.start > 1)
-		return true
-	else if (row.start === 3 && col.start < 3)
-		return true
-	else
-		return false
+	if (mdDevices.value) {
+		if (row.start === 1 && col.start > 1)
+			return true
+		else if (row.start === 3 && col.start < 3)
+			return true
+		else
+			return false
+	} else {
+		if (col.start === 1 && row.start > 2 && row.start < 5)
+			return true
+		else if (col.start === 2 && row.start > 4)
+			return true
+		else
+			return false
+	}
 }
 </script>
 
