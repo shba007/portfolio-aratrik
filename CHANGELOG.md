@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.0.0
+
+### Major Changes
+
+- 5571413: feat: images moved to cdn
+
 ## 0.4.2
 
 ### Patch Changes
