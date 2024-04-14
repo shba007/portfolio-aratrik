@@ -2,28 +2,53 @@
 import { type Options, Splide, SplideSlide, SplideTrack } from '@splidejs/vue-splide';
 
 const prices = [{
-	title: 'Basic',
-	price: 1000,
+	title: 'Basic Food Photography',
+	price: 3500,
 	points: [
-		{ icon: 'photo', content: '10 Photos' },
-		{ icon: 'photo', content: 'Basic editing and color correction' },
+		{ icon: 'photo', content: '20 Photos' },
+		{ icon: 'photo', content: 'Basic editing, color correction' },
 		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
 	]
 }, {
-	title: 'Standard',
-	price: 5000,
+	title: 'Premium Food Photography',
+	price: 5500,
 	points: [
-		{ icon: 'photo', content: '50 Photos/ 1 Minute Video' },
-		{ icon: 'photo', content: 'Advanced editing, retouching, and color grading' },
-		{ icon: 'photo', content: 'High-resolution images and video delivered via online gallery' }
+		{ icon: 'photo', content: '20 Photos' },
+		{ icon: 'photo', content: 'Advanced editing, retouching, and color correction ' },
+		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
 	]
 }, {
-	title: 'Pro',
-	price: 10000,
+	title: 'Standard Food Videography',
+	price: 3500,
 	points: [
-		{ icon: 'photo', content: '100 Photos/ 2 Minute Video' },
+		{ icon: 'photo', content: '1 Minute Video' },
 		{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
-		{ icon: 'photo', content: 'High-resolution images and video delivered via online gallery' }
+		{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
+	]
+}]
+const productPrices = [{
+	title: 'Basic Product Photography',
+	price: '100 / photo',
+	points: [
+		{ icon: 'photo', content: '20 Photos' },
+		{ icon: 'photo', content: 'Basic editing, color correction' },
+		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+	]
+}, {
+	title: 'Premium Product Photography',
+	price: '200 / photo',
+	points: [
+		{ icon: 'photo', content: '20 Photos' },
+		{ icon: 'photo', content: 'Advanced editing, dynamic angle, retouching, and color correction' },
+		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+	]
+}, {
+	title: 'Standard Product Videography',
+	price: '800 / video',
+	points: [
+		{ icon: 'photo', content: '30 Sec Video' },
+		{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
+		{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
 	]
 }]
 
@@ -67,7 +92,7 @@ function onContact(action: boolean) {
 			@move="(slideIndex: number) => activeSlideIndex = slideIndex">
 			<SplideTrack>
 				<SplideSlide v-for="{ title, price, points }, index in prices" :key="title" class="flex justify-center">
-					<PriceModel :active="index === activeSlideIndex" :title="title" :price="price" :points="points"
+					<ModelPrice :active="index === activeSlideIndex" :title="title" :price="price" :points="points"
 						@contact="onContact(true)" />
 				</SplideSlide>
 			</SplideTrack>

@@ -2,24 +2,22 @@
 import { breakpointsTailwind } from '@vueuse/core'
 
 const images = [
-	'Ceremony-006-001', 'Ceremony-006-002', 'Ceremony-006-003',
-	'Ceremony-006-004', 'Ceremony-006-005', 'Ceremony-006-006',
-	'Ceremony-006-007', 'Ceremony-006-008', 'Group-001-001',
-	'Group-001-002', 'Group-001-003', 'Group-002-001',
-	'Group-003-001', 'Group-004-001', 'Group-005-001',
-	'Group-006-001', 'Group-006-002', 'Portrait-001-001',
-	'Portrait-002-001', 'Portrait-003-001', 'Portrait-004-001',
-	'Portrait-005-001', 'Portrait-006-001', 'Portrait-007-001',
-	'Portrait-008-001', 'Portrait-009-001', 'Portrait-010-001',
-	'Portrait-011-001', 'Portrait-012-001', 'Portrait-013-001',
-	'Portrait-014-001', 'Portrait-015-001', 'Portrait-016-001',
-	'Wedding-001-001', 'Wedding-001-002', 'Wedding-001-003',
-	'Wedding-001-004', 'Wedding-001-005', 'Wedding-001-006',
-	'Wedding-001-007', 'Wedding-001-008', 'Wedding-001-009',
-	'Wedding-001-010', 'Wedding-001-011', 'Wedding-001-012',
-	'Wedding-001-013', 'Wedding-001-014', 'Food-001-001',
-	'Food-001-002', 'Food-001-003', 'Food-001-004',
-	'Food-001-005', 'Food-001-006', 'Food-001-007'
+	// Food
+	'9e82456d-78e0-4df0-a152-566327697ef7',
+	'69dcabdd-d9da-419a-a823-285d34db4f95',
+	'd4857636-289b-4e4d-a29f-8e3a42617eb4',
+	'50071c98-e75c-4673-a105-1ae104b6eb35',
+	'badf3211-af49-4991-b573-303d8f485440',
+	'17b026dd-bc91-4c14-bb34-9901e13ba7f8',
+	'937b5072-2414-4d42-9006-5314f0b1682a',
+	'7873bdc2-a518-440d-a8d9-9dd5a13f332e',
+	'2c3e85c4-5562-4bc6-91bb-5ffb2cf95160',
+	// Profucts
+	'3011bb6e-b6cc-4de8-b829-793e17a23db9',
+	'a80ee10f-65f0-4aab-abc2-45436ad7c397',
+	'c2a0dbd9-0ad4-4526-9f2f-3e95c2e3957d',
+	'bfec22b7-c27b-4ad3-9765-9d33484d6723',
+	'9a34beb4-211d-418b-afe4-727b36a64039',
 ]
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
@@ -56,13 +54,13 @@ const imageSlides = computed(() => {
 
 <template>
 	<section ref="container" id="featured" class="relative mx-0 md:-mx-12 h-screen overflow-hidden">
-		<div ref="slider" class="relative flex gap-2 md:gap-4 transition-all ease-linear"
-			:class="{ 'invisible': !isViewVisible }" :style="{ translate: `0 ${-offset}px` }">
+		<div ref="slider" class="relative flex gap-2 transition-all ease-linear" :class="{ 'invisible': !isViewVisible }"
+			:style="{ translate: `0 ${-offset}px` }">
 			<ClientOnly>
-				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2 md:gap-4"
+				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2"
 					:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
-					<img v-for="image in images" :key="image" :src="`/images/photos/${image}.webp`" :alt="image" loading="lazy"
-						class="w-full object-cover rounded-sm md:rounded-md" />
+					<NuxtImg v-for="image in images" :key="image" provider="uploadcare" :src="image" :alt="image" loading="lazy"
+						class="w-full object-cover rounded-sm" />
 				</div>
 			</ClientOnly>
 		</div>
