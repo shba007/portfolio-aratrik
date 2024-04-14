@@ -15,9 +15,11 @@ export default defineNuxtConfig({
     shim: false,
   },
   image: {
-    format: ['avif', 'webp'],
-    width: 1024,
-    quality: 80,
+    quality: 'lightest',
+    format: 'auto',
+    uploadcare: {
+      cdnURL: 'https://ucarecdn.com',
+    }
   },
   colorMode: {
     preference: 'system',
