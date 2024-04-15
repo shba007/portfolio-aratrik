@@ -1,56 +1,66 @@
 <script setup lang="ts">
 import { type Options, Splide, SplideSlide, SplideTrack } from '@splidejs/vue-splide';
 
-const prices = [{
-	title: 'Basic Food Photography',
-	price: 3500,
-	points: [
-		{ icon: 'photo', content: '20 Photos' },
-		{ icon: 'photo', content: 'Basic editing, color correction' },
-		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
-	]
-}, {
-	title: 'Premium Food Photography',
-	price: 5500,
-	points: [
-		{ icon: 'photo', content: '20 Photos' },
-		{ icon: 'photo', content: 'Advanced editing, retouching, and color correction ' },
-		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
-	]
-}, {
-	title: 'Standard Food Videography',
-	price: 3500,
-	points: [
-		{ icon: 'photo', content: '1 Minute Video' },
-		{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
-		{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
-	]
-}]
-const productPrices = [{
-	title: 'Basic Product Photography',
-	price: '100 / photo',
-	points: [
-		{ icon: 'photo', content: '20 Photos' },
-		{ icon: 'photo', content: 'Basic editing, color correction' },
-		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
-	]
-}, {
-	title: 'Premium Product Photography',
-	price: '200 / photo',
-	points: [
-		{ icon: 'photo', content: '20 Photos' },
-		{ icon: 'photo', content: 'Advanced editing, dynamic angle, retouching, and color correction' },
-		{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
-	]
-}, {
-	title: 'Standard Product Videography',
-	price: '800 / video',
-	points: [
-		{ icon: 'photo', content: '30 Sec Video' },
-		{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
-		{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
-	]
-}]
+const props = defineProps<{
+	tabs: {
+		title: Categories;
+		icon: string;
+	}[], activeTab: Categories
+}>()
+
+const emit = defineEmits<{ (event: 'changeTab', value: Categories): void }>()
+
+const prices = {
+	'food': [{
+		title: 'Basic Photography',
+		price: 3500,
+		points: [
+			{ icon: 'photo', content: '20 Photos' },
+			{ icon: 'photo', content: 'Basic editing, color correction' },
+			{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+		]
+	}, {
+		title: 'Premium Photography',
+		price: 5500,
+		points: [
+			{ icon: 'photo', content: '20 Photos' },
+			{ icon: 'photo', content: 'Advanced editing, retouching, and color correction ' },
+			{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+		]
+	}, {
+		title: 'Standard Videography',
+		price: 3500,
+		points: [
+			{ icon: 'photo', content: '1 Minute Video' },
+			{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
+			{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
+		]
+	}], 'product': [{
+		title: 'Basic Photography',
+		price: '100 per photo',
+		points: [
+			{ icon: 'photo', content: '20 Photos' },
+			{ icon: 'photo', content: 'Basic editing, color correction' },
+			{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+		]
+	}, {
+		title: 'Premium Photography',
+		price: '200 per photo',
+		points: [
+			{ icon: 'photo', content: '20 Photos' },
+			{ icon: 'photo', content: 'Dynamic angle, retouching, and color correction' },
+			{ icon: 'photo', content: 'High-resolution images delivered via online gallery' }
+		]
+	}, {
+		title: 'Standard Videography',
+		price: '800 per video',
+		points: [
+			{ icon: 'photo', content: '30 Second Video' },
+			{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
+			{ icon: 'photo', content: 'High-resolution video delivered via online gallery' }
+		]
+	}]
+}
 
 const splideOption: Options = {
 	mediaQuery: 'min',
@@ -88,10 +98,15 @@ function onContact(action: boolean) {
 
 <template>
 	<section id="pricing" class="relative -left-4 md:left-0 w-screen md:w-full">
-		<Splide :options="splideOption" tag="div" :has-track="false" class=""
+		<div class="flex gap-4 mx-auto mb-4 md:mb-12 w-fit">
+			<TabButton v-for="{ icon, title } in tabs" :key="title" :icon="icon" :title="title" :active="activeTab === title"
+				@click="emit('changeTab', title)" />
+		</div>
+		<Splide :options="splideOption" tag="div" :has-track="false"
 			@move="(slideIndex: number) => activeSlideIndex = slideIndex">
 			<SplideTrack>
-				<SplideSlide v-for="{ title, price, points }, index in prices" :key="title" class="flex justify-center">
+				<SplideSlide v-for="{ title, price, points }, index in prices[activeTab]" :key="title"
+					class="flex justify-center">
 					<ModelPrice :active="index === activeSlideIndex" :title="title" :price="price" :points="points"
 						@contact="onContact(true)" />
 				</SplideSlide>

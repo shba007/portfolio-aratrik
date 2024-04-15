@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import { breakpointsTailwind } from '@vueuse/core'
 
-const tabs = ref([{
-	icon: 'pizza',
-	title: 'food'
-}, {
-	icon: 'box',
-	title: 'product'
-}] as const)
+const props = defineProps<{
+	tabs: {
+		title: Categories;
+		icon: string;
+	}[], activeTab: Categories
+}>()
 
-const activeTab = ref<'food' | 'product'>('food')
+const emit = defineEmits<{ (event: 'changeTab', value: Categories): void }>()
 
-function changeActiveTab(newTab: 'food' | 'product') {
-	activeTab.value = newTab
-}
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
@@ -85,7 +81,7 @@ const images = computed<{
 			size: 'm',
 		},
 	].map((image: any, index) => {
-		image.url = categoryImages[activeTab.value][index]
+		image.url = categoryImages[props.activeTab][index]
 		image.alt = image.url
 		return image
 	})
@@ -125,7 +121,7 @@ function autoScaling({ row, col }: {
 	<section id="gallery" class="relative h-fit">
 		<div class="flex gap-4 mx-auto mb-4 md:mb-12 w-fit">
 			<TabButton v-for="{ icon, title } in tabs" :key="title" :icon="icon" :title="title" :active="activeTab === title"
-				@click="changeActiveTab(title)" />
+				@click="emit('changeTab', title)" />
 		</div>
 		<div class="relative grid grid-rows-6 sm:grid-rows-3 grid-cols-2 sm:grid-cols-4 gap-2 mx-0 sm:-mx-12">
 			<ClientOnly>
