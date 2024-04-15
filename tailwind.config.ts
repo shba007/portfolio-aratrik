@@ -50,7 +50,7 @@ module.exports = {
         600: '#23324D'
       },
       primary: {
-        400: '#FDEB9B',
+        400: '#E8D78E',
         500: '#CABC7C',
         600: '#988D5D',
       },

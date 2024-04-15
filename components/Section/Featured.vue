@@ -62,17 +62,17 @@ const imageSlides = computed(() => {
 		<div v-show="isSliderVisible" ref="slider" class="relative flex gap-2 transition-all ease-linear""
 			:style="{ translate: `0 ${-offset}px` }">
 			<!-- <ClientOnly> -->
-				<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2"
-					:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
-					<NuxtImg v-for="image in images" :key="image" provider="uploadcare" :src="image" :alt="image" loading="lazy"
-						class="w-full object-cover rounded-sm" />
-				</div>
+			<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2"
+				:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
+				<NuxtImg v-for="image in images" :key="image" provider="uploadcare" :src="image" :alt="image" loading="lazy"
+					class="w-full object-cover rounded-sm" />
+			</div>
 			<!-- </ClientOnly> -->
 		</div>
 		<Transition>
 			<div v-show="isEndVisible"
 				class="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-full text-primary-500 -z-10">
-				<NuxtIcon name="logo-full" class="text-[196px] md:text-[356px]" />
+				<NuxtIcon name="logo-full" class="text-[196px] md:text-[356px] drop-shadow-md" />
 			</div>
 		</Transition>
 	</section>
