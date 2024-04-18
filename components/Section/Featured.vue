@@ -62,7 +62,7 @@ const imageSlides = computed(() => {
 		<div v-show="isSliderVisible" ref="slider" class="relative flex gap-2 transition-all ease-linear""
 			:style="{ translate: `0 ${-offset}px` }">
 			<!-- <ClientOnly> -->
-			<div v-for="images, index in imageSlides" :key="index" class="flex flex-col gap-2"
+			<div v-for="images, index in imageSlides" :key="index" class="flex-1 flex flex-col gap-2"
 				:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
 				<NuxtImg v-for="image in images" :key="image" provider="uploadcare" :src="image" :alt="image" loading="lazy"
 					class="w-full object-cover rounded-sm" />

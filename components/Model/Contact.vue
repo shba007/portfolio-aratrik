@@ -7,9 +7,9 @@ const emit = defineEmits<{
 }>()
 
 const methods = ref([
-  { method: 'call', icon: 'phone', link: 'tel:+91801-727-5285' },
+  { method: 'call', icon: 'phone', link: 'tel:+91891-048-9578' },
   // { method: 'email', icon: 'email', link: 'mailto:shirsendu2001@gmail.com' },
-  { method: 'whatsapp', icon: 'whatsapp', link: 'https://wa.me/918017275285' }
+  { method: 'whatsapp', icon: 'whatsapp', link: 'https://wa.me/918910489578' }
 ])
 
 function contact(method: string) {
@@ -43,7 +43,7 @@ function flippedClass(method: string) {
 
 <style scoped>
 a {
-  @apply bg-primary-500 hover:bg-primary-400 drop-shadow-[inset_-2px_2px_8px_0_rgba(0,0,0,0.25)] hover:drop-shadow-[inset_-4px_4px_8px_0_rgba(0,0,0,0.25)] transition-all duration-500 ease-out;
+  @apply bg-primary-500 hover:bg-primary-400 drop-shadow-[inset_-2px_2px_8px_0_rgba(0, 0, 0, 0.25)] hover:drop-shadow-[inset_-4px_4px_8px_0_rgba(0, 0, 0, 0.25)] transition-all duration-500 ease-out;
   clip-path: polygon(100% 100%, -0.212% 100%, -0.212% 0%, 64.491% 9.708%, 64.491% 9.708%, 70.473% 10.99%, 76.066% 12.952%, 81.213% 15.533%, 85.858% 18.678%, 89.943% 22.327%, 93.412% 26.422%, 96.21% 30.906%, 98.278% 35.72%, 99.56% 40.806%, 100% 46.106%, 100% 100%);
 }
 

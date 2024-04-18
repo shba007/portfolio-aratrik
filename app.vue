@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const title = `Professional Photographer/Videographer in Kolkata`
-const description = `Elevate your visual storytelling with professional photographer/videographer Aratrik Nandy. 
-From timeless portraits to cinematic narratives, experience the art of visual mastery. 
-Book Aratrik Nandy for unparalleled creativity and impeccable craftsmanship.`
+const description = `Nurture the essence of your product with our photography & videography services`
 const url = "https://redcatpictures.com"
 
 useHead({
@@ -44,14 +42,14 @@ useSchemaOrg([
     description: "He is a Professional Photographer/Videographer",
     image: url + "/logo.png",
     sameAs: [
-      "https://www.instagram.com/photos_by_aratrik/",
-      "https://www.facebook.com/profile.php?id=100084481593671"
+      "https://www.facebook.com/profile.php?id=61559002911290",
+      "https://www.instagram.com/redcatxpictures",
     ],
   }),
   defineLocalBusiness({
     name: "Aratrik Nandy",
     address: {
-      streetAddress: "RN Bhattacharya Road, Kumorpara 2nd Lane",
+      streetAddress: "17 NS Road, Vivekananda pally near Joyram Bhavan",
       addressLocality: "Kolkata",
       addressRegion: "WB",
       postalCode: "700146",
