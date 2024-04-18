@@ -14,6 +14,7 @@ const prices = {
 	'food': [{
 		title: 'Basic Photography',
 		price: 3500,
+		unit: 'session',
 		points: [
 			{ icon: 'photo', content: '20 Photos' },
 			{ icon: 'photo', content: 'Basic editing, color correction' },
@@ -22,6 +23,7 @@ const prices = {
 	}, {
 		title: 'Premium Photography',
 		price: 5500,
+		unit: 'session',
 		points: [
 			{ icon: 'photo', content: '20 Photos' },
 			{ icon: 'photo', content: 'Advanced editing, retouching, and color correction ' },
@@ -30,6 +32,7 @@ const prices = {
 	}, {
 		title: 'Standard Videography',
 		price: 3500,
+		unit: 'session',
 		points: [
 			{ icon: 'photo', content: '1 Minute Video' },
 			{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
@@ -37,7 +40,8 @@ const prices = {
 		]
 	}], 'product': [{
 		title: 'Basic Photography',
-		price: '100 per photo',
+		price: 100,
+		unit: 'photo',
 		points: [
 			{ icon: 'photo', content: '20 Photos' },
 			{ icon: 'photo', content: 'Basic editing, color correction' },
@@ -45,7 +49,8 @@ const prices = {
 		]
 	}, {
 		title: 'Premium Photography',
-		price: '200 per photo',
+		price: 200,
+		unit: 'photo',
 		points: [
 			{ icon: 'photo', content: '20 Photos' },
 			{ icon: 'photo', content: 'Dynamic angle, retouching, and color correction' },
@@ -53,7 +58,8 @@ const prices = {
 		]
 	}, {
 		title: 'Standard Videography',
-		price: '800 per video',
+		price: 800,
+		unit: 'video',
 		points: [
 			{ icon: 'photo', content: '30 Second Video' },
 			{ icon: 'photo', content: 'Extensive editing, retouching, and color grading' },
@@ -105,9 +111,9 @@ function onContact(action: boolean) {
 		<Splide :options="splideOption" tag="div" :has-track="false"
 			@move="(slideIndex: number) => activeSlideIndex = slideIndex">
 			<SplideTrack>
-				<SplideSlide v-for="{ title, price, points }, index in prices[activeTab]" :key="title"
+				<SplideSlide v-for="{ title, price, unit, points }, index in prices[activeTab]" :key="title"
 					class="flex justify-center">
-					<ModelPrice :active="index === activeSlideIndex" :title="title" :price="price" :points="points"
+					<ModelPrice :active="index === activeSlideIndex" :title="title" :price="price" :unit="unit" :points="points"
 						@contact="onContact(true)" />
 				</SplideSlide>
 			</SplideTrack>

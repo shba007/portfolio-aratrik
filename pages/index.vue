@@ -57,20 +57,20 @@ function changeActiveTab(tab: Categories) {
 		<ul
 			class="row-start-2 md:row-start-3 col-start-2 md:col-start-3 justify-self-end flex gap-4 md:gap-8 hover:*:text-white *:transition-colors *:duration-500 *:ease-out">
 			<li>
-				<NuxtLink to="https://www.facebook.com/profile.php?id=100084481593671" target="_blank">
+				<NuxtLink to="https://www.facebook.com/profile.php?id=61559002911290" target="_blank">
 					<NuxtIcon name="facebook" class="text-[28px] md:text-[40px]" />
 				</NuxtLink>
 			</li>
 			<li>
-				<NuxtLink to="https://www.instagram.com/photos_by_aratrik/" target="_blank">
+				<NuxtLink to="https://www.instagram.com/redcatxpictures" target="_blank">
 					<NuxtIcon name="instagram" class="text-[28px] md:text-[40px]" />
 				</NuxtLink>
 			</li>
-			<li>
+			<!-- <li>
 				<NuxtLink to="https://www.youtube.com/" target="_blank">
 					<NuxtIcon name="youtube" class="text-[28px] md:text-[40px]" />
 				</NuxtLink>
-			</li>
+			</li> -->
 		</ul>
 	</footer>
 </template>
