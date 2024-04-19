@@ -26,8 +26,8 @@ const { height: containerHeight } = useElementSize(container)
 const slider = ref<HTMLDivElement | null>(null)
 const { height: sliderHeight } = useElementSize(slider)
 
-const counter = useInterval(75)
-const offset = computed(() => counter.value * 5)
+const counter = useInterval(1800)
+const offset = computed(() => counter.value * 100)
 const isSliderVisible = ref(true)
 const isEndVisible = ref(false)
 
@@ -59,7 +59,7 @@ const imageSlides = computed(() => {
 
 <template>
 	<section ref="container" id="featured" class="relative mx-0 md:-mx-12 h-screen overflow-hidden">
-		<div v-show="isSliderVisible" ref="slider" class="relative flex gap-2 transition-all ease-linear""
+		<div v-show="isSliderVisible" ref="slider" class="relative flex gap-2 transition-all duration-[2s] ease-linear""
 			:style="{ translate: `0 ${-offset}px` }">
 			<!-- <ClientOnly> -->
 			<div v-for="images, index in imageSlides" :key="index" class="flex-1 flex flex-col gap-2"
