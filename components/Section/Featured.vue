@@ -26,8 +26,9 @@ const { height: containerHeight } = useElementSize(container)
 const slider = ref<HTMLDivElement | null>(null)
 const { height: sliderHeight } = useElementSize(slider)
 
+const offsetFactor = 100
 const counter = useInterval(1800)
-const offset = computed(() => counter.value * 100)
+const offset = computed(() => counter.value * offsetFactor)
 const isSliderVisible = ref(true)
 const isEndVisible = ref(false)
 
@@ -37,12 +38,12 @@ watch(offset, (value) => {
 	else
 		isEndVisible.value = true
 
-	if (offset.value > -(containerHeight.value + 50))
+	if (offset.value > -(containerHeight.value + 2 * offsetFactor))
 		isSliderVisible.value = true
 	if (value > sliderHeight.value)
 		isSliderVisible.value = false
-	if (value > sliderHeight.value + 50)
-		counter.value = -(containerHeight.value + 100) / 5
+	if (value > sliderHeight.value + 2 * offsetFactor)
+		counter.value = -(containerHeight.value + 2 * offsetFactor) / offsetFactor
 })
 
 const imageSlides = computed(() => {
