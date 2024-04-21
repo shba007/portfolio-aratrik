@@ -1,5 +1,15 @@
 # portfolio-artarik
 
+## 1.2.0
+
+### Minor Changes
+
+- 5c6ce30: feat: product pricing, featured animation added
+
+### Patch Changes
+
+- 8ff7f4f: feat: hero section modified, primary-color-400 darkened
+
 ## 1.1.0
 
 ### Minor Changes
