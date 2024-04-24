@@ -1,5 +1,15 @@
 # portfolio-artarik
 
+## 1.3.0
+
+### Minor Changes
+
+- 4ac6465: refactor: previews updated, number changed some metadata updated
+
+### Patch Changes
+
+- 3ea4ac2: fix: contact.vue fixed
+
 ## 1.2.0
 
 ### Minor Changes
