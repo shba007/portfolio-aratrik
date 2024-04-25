@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.2
+
+### Patch Changes
+
+- 99c1433: fix: feature section ontime scroll issue
+
 ## 1.3.1
 
 ### Patch Changes
