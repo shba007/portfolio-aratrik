@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.1
+
+### Patch Changes
+
+- b6bef72: fix: lagging in featured section
+
 ## 1.3.0
 
 ### Minor Changes
