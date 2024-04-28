@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.3
+
+### Patch Changes
+
+- 890e0ea: fix: performance issue resolved and new images added
+
 ## 1.3.2
 
 ### Patch Changes
