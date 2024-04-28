@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const emit = defineEmits<{ (event: 'contact'): void }>()
 const images = ref([
+	'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
 	'c048ef8c-20d4-4b6b-be6f-103a56b2ba8b',
-	'76d57406-39d6-42bb-b1e4-5b0c2d0f48e3',
 	'f0bd8b64-1730-412e-a5cf-a9161c393ce6'
 ])
 </script>
@@ -22,8 +22,9 @@ const images = ref([
 		</div>
 		<div
 			class="relative flex md:flex-col justify-center items-center row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 mx-auto sm:max-w-[32rem] lg:max-w-full lg:h-screen -z-10">
-			<NuxtImg v-for="image in images" :key="image" :src="image + '/-/preview/1600x1200/'" :alt="image"
-				provider="uploadcare" class="rounded-full md:translate-x-[10%] -rotate-6 lg:scale-[80%] aspect-video" />
+			<NuxtImg v-for="image, index in images" :key="image" :src="image + '/-/preview/1600x1200/'" :alt="image"
+				provider="uploadcare" class="rounded-full md:translate-x-[10%] lg:scale-[80%] aspect-video"
+				:class="{ '-rotate-6': index !== 1 }" />
 		</div>
 		<CTAButton class="md:hidden row-start-3 col-start-2 justify-self-center items-center" @click="emit('contact')" />
 	</section>
