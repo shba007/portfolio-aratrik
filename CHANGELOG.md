@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.4
+
+### Patch Changes
+
+- 64eb969: fix: hero image rotate
+
 ## 1.3.3
 
 ### Patch Changes
