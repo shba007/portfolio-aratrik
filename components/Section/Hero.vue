@@ -21,13 +21,9 @@ const images = ref([
 			<CTAButton class="hidden md:flex" @click="emit('contact')" />
 		</div>
 		<div
-			class="relative flex md:flex-col justify-center items-center row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 mx-auto sm:max-w-[32rem] lg:max-w-full lg:h-screen md:-translate-y-16 -z-10 overflow-hidden">
-			<NuxtImg :src="images[0]" :alt="images[0]" provider="uploadcare"
-				class="rounded-full md:translate-x-[10%] -rotate-6 lg:scale-[80%] aspect-video" />
-			<NuxtImg :src="images[1]" :alt="images[1]" provider="uploadcare"
-				class="rounded-full md:translate-x-[10%] -rotate-0 lg:scale-[80%] aspect-video" />
-			<NuxtImg :src="images[2]" :alt="images[2]" provider="uploadcare"
-				class="rounded-full md:translate-x-[10%] -rotate-6 lg:scale-[80%] aspect-video" />
+			class="relative flex md:flex-col justify-center items-center row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 mx-auto sm:max-w-[32rem] lg:max-w-full lg:h-screen -z-10">
+			<NuxtImg v-for="image in images" :key="image" :src="image + '/-/preview/1600x1200/'" :alt="image"
+				provider="uploadcare" class="rounded-full md:translate-x-[10%] -rotate-6 lg:scale-[80%] aspect-video" />
 		</div>
 		<CTAButton class="md:hidden row-start-3 col-start-2 justify-self-center items-center" @click="emit('contact')" />
 	</section>
