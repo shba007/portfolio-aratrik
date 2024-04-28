@@ -31,8 +31,8 @@ const categoryImages = {
 	product: [
 		'f0bd8b64-1730-412e-a5cf-a9161c393ce6',
 		'9a34beb4-211d-418b-afe4-727b36a64039',
-		'c048ef8c-20d4-4b6b-be6f-103a56b2ba8b',
-		'2d58b5fe-7552-4022-8bda-0f22a042eda2',
+		'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
+		'35899c6d-4a02-4979-bf88-55afe2d48a07',
 		'76d57406-39d6-42bb-b1e4-5b0c2d0f48e3',
 		'c2a0dbd9-0ad4-4526-9f2f-3e95c2e3957d',
 		'3011bb6e-b6cc-4de8-b829-793e17a23db9',
@@ -126,8 +126,8 @@ function autoScaling({ row, col }: {
 		<div class="relative grid grid-rows-6 sm:grid-rows-3 grid-cols-2 sm:grid-cols-4 gap-2 mx-0 sm:-mx-12">
 			<ClientOnly>
 				<NuxtImg v-for="{ position, size, url, alt } in images" :key="alt" provider="uploadcare"
-					:src="autoScaling(position) ? `${url}/-/scale_crop/1280x960/center/` : url"
-					:alt="`alt-${JSON.stringify(position)}`" loading="lazy"
+					:src="autoScaling(position) ? `${url}/-/scale_crop/1280x960/center/` : url + '/-/preview/1280x960/'"
+					:alt="`alt-${JSON.stringify(position)}`"
 					class="rounded-sm w-full h-full object-cover object-top overflow-hidden"
 					:class="objectToClass(position, size)" />
 			</ClientOnly>

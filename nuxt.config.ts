@@ -11,11 +11,8 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-icons',
   ],
-  typescript: {
-    shim: false,
-  },
   image: {
-    quality: 'lightest',
+    quality: 'smart',
     format: 'auto',
     uploadcare: {
       cdnURL: 'https://ucarecdn.com',
