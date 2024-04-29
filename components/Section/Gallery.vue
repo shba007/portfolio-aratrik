@@ -29,7 +29,7 @@ const categoryImages = {
 
 	],
 	product: [
-		'f0bd8b64-1730-412e-a5cf-a9161c393ce6',
+		'cfed72bc-cbfa-4ab0-b30c-1eb17ae431b2',
 		'9a34beb4-211d-418b-afe4-727b36a64039',
 		'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
 		'35899c6d-4a02-4979-bf88-55afe2d48a07',
