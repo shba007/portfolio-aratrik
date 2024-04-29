@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.5
+
+### Patch Changes
+
+- ab25626: fix: a image contour, hero section space
+
 ## 1.3.4
 
 ### Patch Changes
