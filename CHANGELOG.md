@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.6
+
+### Patch Changes
+
+- 1695703: chore: deploy script updated
+
 ## 1.3.5
 
 ### Patch Changes
