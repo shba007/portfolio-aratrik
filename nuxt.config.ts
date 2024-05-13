@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-icons',
   ],
+  routeRules: {
+    '/': { prerender: true }
+  },
   image: {
     quality: 'smart',
     format: 'auto',
