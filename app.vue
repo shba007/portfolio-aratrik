@@ -3,24 +3,6 @@ const title = `Professional Photographer/Videographer in Kolkata`
 const description = `Nurture the essence of your product with our photography & videography services`
 const url = "https://redcatpictures.com"
 
-useHead({
-  link: [
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossorigin: 'anonymous',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500&display=swap',
-    },
-  ],
-})
-
 useSeoMeta({
   ogType: "profile",
   title: title,
