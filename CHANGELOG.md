@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.7
+
+### Patch Changes
+
+- af10e83: chore: updated packages, assets
+
 ## 1.3.6
 
 ### Patch Changes
