@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.3.8
+
+### Patch Changes
+
+- f0032e6: fix: feature section background style
+
 ## 1.3.7
 
 ### Patch Changes
