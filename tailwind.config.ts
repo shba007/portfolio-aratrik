@@ -26,8 +26,8 @@ module.exports = {
       '5xl': ['3.5rem', '4.1875rem'],
     },
     fontFamily: {
-      head: ['Oxanium', 'sans-serif'],
-      body: ['Oxanium', 'sans-serif'],
+      main: ['Oxanium', 'sans-serif'],
+      sub: ['Oxanium', 'sans-serif']
     },
     fontWeight: {
       light: 300,

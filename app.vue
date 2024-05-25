@@ -58,6 +58,7 @@ useSchemaOrg([
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <AppInstallPrompt />
 </template>
 
 <style>
@@ -81,7 +82,7 @@ html {
 }
 
 body {
-  @apply relative min-h-screen font-body text-black dark:text-white bg-light-400 dark:bg-dark-400 overflow-x-hidden;
+  @apply relative min-h-screen font-main text-black dark:text-white bg-light-400 dark:bg-dark-400 overflow-x-hidden;
 }
 
 .nuxt-icon>svg {

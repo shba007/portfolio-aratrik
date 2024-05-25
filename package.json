@@ -19,21 +19,22 @@
     "clean": "nuxt cleanup"
   },
   "dependencies": {
-    "@splidejs/vue-splide": "^0.6.12"
+    "@splidejs/vue-splide": "^0.6.12",
+    "nuxt": "^3.11.2",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.2",
     "@nuxt/devtools": "latest",
+    "@nuxt/fonts": "^0.7.0",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/seo": "^2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vite-pwa/nuxt": "^0.7.0",
     "@vueuse/nuxt": "^10.9.0",
-    "nuxt": "^3.11.2",
     "nuxt-gtag": "^2.0.6",
-    "nuxt-icons": "^3.2.1",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "nuxt-icons": "^3.2.1"
   }
 }

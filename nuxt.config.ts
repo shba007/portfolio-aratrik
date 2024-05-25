@@ -2,14 +2,15 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxt/image',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/seo',
-    '@nuxtjs/tailwindcss',
-    '@vite-pwa/nuxt',
-    '@vueuse/nuxt',
-    'nuxt-gtag',
-    'nuxt-icons',
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/seo",
+    "@nuxtjs/tailwindcss",
+    "@vite-pwa/nuxt",
+    "@vueuse/nuxt",
+    "nuxt-gtag",
+    "nuxt-icons",
   ],
   routeRules: {
     '/': { prerender: true }
