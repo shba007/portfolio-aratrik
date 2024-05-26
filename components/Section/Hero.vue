@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const emit = defineEmits<{ (event: 'contact'): void }>()
-const images = ref([
-	'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
-	'c048ef8c-20d4-4b6b-be6f-103a56b2ba8b',
-	'cfed72bc-cbfa-4ab0-b30c-1eb17ae431b2'
-])
+const images = getImages(['Product-006-001', 'Product-001-002', 'Product-004-002'])
 </script>
 
 <template>
@@ -22,7 +18,7 @@ const images = ref([
 		</div>
 		<div
 			class="gradient-mask row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 relative flex md:flex-col gap-4 justify-center items-center mx-auto sm:max-w-[32rem] lg:max-w-full lg:h-screen -z-10">
-			<NuxtImg v-for="image, index in images" :key="image" :src="image + '/-/resize/1600x900/'" :alt="image"
+			<NuxtImg v-for="{ id, title }, index in images" :key="id" :src="id + '/-/resize/1600x900/'" :alt="title"
 				provider="uploadcare" class="rounded-full md:translate-x-[10%] lg:scale-[80%] aspect-video"
 				:class="{ '-rotate-6': index !== 1 }" />
 		</div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const title = `Professional Photographer/Videographer in Kolkata`
-const description = `Nurture the essence of your product with our photography & videography services`
+const title = `Professional Food & Product photography/Videography in Kolkata`
+const description = `Nurture the essence of your food & product with our photography & videography services in Kolkata`
 const url = "https://redcatpictures.com"
 
 useSeoMeta({
@@ -21,7 +21,7 @@ useSeoMeta({
 useSchemaOrg([
   definePerson({
     name: "Aratrik Nandy",
-    description: "He is a Professional Photographer/Videographer",
+    description: "He is a Professional Food & Product Photographer/Videographer",
     image: url + "/logo.png",
     sameAs: [
       "https://www.facebook.com/profile.php?id=61559002911290",
@@ -31,7 +31,7 @@ useSchemaOrg([
   defineLocalBusiness({
     name: "Aratrik Nandy",
     address: {
-      streetAddress: "17 NS Road, Vivekananda pally near Joyram Bhavan",
+      streetAddress: "17 NS Road, Vivekananda pally near Joyram Bhavan, rajpur sonarpur",
       addressLocality: "Kolkata",
       addressRegion: "WB",
       postalCode: "700146",

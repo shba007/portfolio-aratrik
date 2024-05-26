@@ -11,7 +11,7 @@ function onNavigate(section: string) {
 		<NuxtLink to="/">
 			<NuxtIcon name="logo-full" class="text-[96px] md:text-[128px]" />
 		</NuxtLink>
-		<ul class="hidden md:flex gap-8">
+		<ul class="hidden md:flex gap-8 justify-center">
 			<li><NuxtLink to="#featured" @click="onNavigate('featured')">Featured</NuxtLink></li>
 			<li><NuxtLink to="#gallery" @click="onNavigate('gallery')">Gallery</NuxtLink></li>
 			<li><NuxtLink to="#pricing" @click="onNavigate('pricing')">Pricing</NuxtLink></li>

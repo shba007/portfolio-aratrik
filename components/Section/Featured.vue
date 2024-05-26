@@ -1,26 +1,13 @@
 <script setup lang="ts">
 import { breakpointsTailwind } from '@vueuse/core'
 
-const images = [
-	// Food
-	'9e82456d-78e0-4df0-a152-566327697ef7',
-	'69dcabdd-d9da-419a-a823-285d34db4f95',
-	'd4857636-289b-4e4d-a29f-8e3a42617eb4',
-	'50071c98-e75c-4673-a105-1ae104b6eb35',
-	'badf3211-af49-4991-b573-303d8f485440',
-	'17b026dd-bc91-4c14-bb34-9901e13ba7f8',
-	'937b5072-2414-4d42-9006-5314f0b1682a',
-	'7873bdc2-a518-440d-a8d9-9dd5a13f332e',
-	'2c3e85c4-5562-4bc6-91bb-5ffb2cf95160',
-	// Profucts
-	'3011bb6e-b6cc-4de8-b829-793e17a23db9',
-	'c2a0dbd9-0ad4-4526-9f2f-3e95c2e3957d',
-	'bfec22b7-c27b-4ad3-9765-9d33484d6723',
-	'9a34beb4-211d-418b-afe4-727b36a64039',
-	'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
-	'35899c6d-4a02-4979-bf88-55afe2d48a07',
-	'ab7cab7e-d43e-4c48-a0e6-845db7b14c1d'
-]
+const images = getImages([
+	'Food-004-001', 'Food-002-001', 'Food-003-001', 'Food-001-001',
+	'Food-005-001', 'Food-007-001', 'Food-006-001', 'Food-009-001',
+	'Food-008-001', 'Food-006-002', 'Product-001-001', 'Product-003-001',
+	'Product-004-001', 'Product-005-001', 'Product-006-001', 'Product-007-001',
+	'Product-002-001'
+])
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
@@ -51,7 +38,7 @@ watch(offset, (value) => {
 
 const imageSlides = computed(() => {
 	const noOfSlides = !mdDevices.value ? 2 : 3
-	const slides: string[][] = new Array(noOfSlides).fill(null).map(_ => [])
+	const slides: { id: string, title: string }[][] = new Array(noOfSlides).fill(null).map(_ => [])
 
 	images.forEach((image, index) => {
 		slides[index % noOfSlides].push(image)
@@ -68,8 +55,8 @@ const imageSlides = computed(() => {
 			:style="{ translate: `0 ${-offset}px` }">
 			<div v-for="images, index in imageSlides" :key="index" class="flex-1 flex flex-col gap-2"
 				:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
-				<NuxtImg v-for="image in images" :key="image" provider="uploadcare" :src="image + '/-/preview/1280x960/'"
-					:alt="image" class="w-full object-cover rounded-sm" />
+				<NuxtImg v-for="{ id, title } in images" :key="id" provider="uploadcare" :src="id + '/-/preview/1280x960/'"
+					:alt="title" class="w-full object-cover rounded-sm" />
 			</div>
 		</div>
 		<Transition>

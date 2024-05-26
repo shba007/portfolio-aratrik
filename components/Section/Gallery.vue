@@ -10,36 +10,14 @@ const props = defineProps<{
 
 const emit = defineEmits<{ (event: 'changeTab', value: Categories): void }>()
 
-
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
 
 const categoryImages = {
-	food: [
-		'69dcabdd-d9da-419a-a823-285d34db4f95',
-		'badf3211-af49-4991-b573-303d8f485440',
-		'd4857636-289b-4e4d-a29f-8e3a42617eb4',
-		'9d7e283c-f017-40f5-b688-8af1a6f5d84c',
-		'17b026dd-bc91-4c14-bb34-9901e13ba7f8',
-		'9e82456d-78e0-4df0-a152-566327697ef7',
-		'50071c98-e75c-4673-a105-1ae104b6eb35',
-		// '69dcabdd-d9da-419a-a823-285d34db4f95',
-		// '937b5072-2414-4d42-9006-5314f0b1682a',
-		// '937b5072-2414-4d42-9006-5314f0b1682a',
-
-	],
-	product: [
-		'cfed72bc-cbfa-4ab0-b30c-1eb17ae431b2',
-		'9a34beb4-211d-418b-afe4-727b36a64039',
-		'fa4134de-c4ef-467f-b750-a5f6b6d8a3fb',
-		'35899c6d-4a02-4979-bf88-55afe2d48a07',
-		'76d57406-39d6-42bb-b1e4-5b0c2d0f48e3',
-		'c2a0dbd9-0ad4-4526-9f2f-3e95c2e3957d',
-		'3011bb6e-b6cc-4de8-b829-793e17a23db9',
-		// 'bfec22b7-c27b-4ad3-9765-9d33484d6723',
-		// '50071c98-e75c-4673-a105-1ae104b6eb35',
-
-	]
+	food: getImages(['Food-002-001', 'Food-005-001', 'Food-003-001',
+		'Food-006-002', 'Food-007-001', 'Food-004-001', 'Food-001-001']),
+	product: getImages(['Product-004-002', 'Product-005-001', 'Product-006-001',
+		'Product-007-001', 'Product-002-002', 'Product-003-001', 'Product-001-001'])
 }
 
 const images = computed<{
@@ -81,8 +59,8 @@ const images = computed<{
 			size: 'm',
 		},
 	].map((image: any, index) => {
-		image.url = categoryImages[props.activeTab][index]
-		image.alt = image.url
+		image.url = categoryImages[props.activeTab][index].id
+		image.alt = categoryImages[props.activeTab][index].title
 		return image
 	})
 ))
