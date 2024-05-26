@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.4.0
+
+### Minor Changes
+
+- bec1e1e: feat: app install prompt added, nuxt font added
+
 ## 1.3.8
 
 ### Patch Changes
