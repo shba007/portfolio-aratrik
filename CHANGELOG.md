@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.4.1
+
+### Patch Changes
+
+- 6fc5943: seo: added descriptive alt tag to each images
+
 ## 1.4.0
 
 ### Minor Changes
