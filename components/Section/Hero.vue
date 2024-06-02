@@ -18,9 +18,9 @@ const images = getImages(['Product-006-001', 'Product-001-002', 'Product-004-002
 		</div>
 		<div
 			class="gradient-mask row-start-2 md:row-start-1 col-start-1 md:col-start-2 col-span-3 md:col-span-2 relative flex md:flex-col gap-4 justify-center items-center mx-auto sm:max-w-[32rem] lg:max-w-full lg:h-screen -z-10">
-			<NuxtImg v-for="{ id, title }, index in images" :key="id" :src="id + '/-/resize/1600x900/'" :alt="title"
-				provider="uploadcare" class="rounded-full md:translate-x-[10%] lg:scale-[80%] aspect-video"
-				:class="{ '-rotate-6': index !== 1 }" />
+			<NuxtImg v-for="{ id, title }, index in images" :key="id" :src="id + '/-/resize/800x450/'" :alt="title"
+				width="800" height="450" provider="uploadcare"
+				class="rounded-full md:translate-x-[10%] lg:scale-[80%] aspect-video" :class="{ '-rotate-6': index !== 1 }" />
 		</div>
 		<CTAButton class="md:hidden row-start-3 col-start-2 justify-self-center items-center" @click="emit('contact')" />
 	</section>

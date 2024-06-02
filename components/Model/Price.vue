@@ -21,8 +21,8 @@ const emit = defineEmits<{
 		:class="{ 'border border-primary-500 scale-105': active }">
 		<h2 class="text-center text-lg md:text-2xl text-primary-500 w-min">{{ title }}</h2>
 		<span class="flex gap-2 justify-center items-center">
-			<h1 class="text-center text-3xl md:text-3xl">₹{{ price }}</h1>
-			<h6>/ {{ unit }}</h6>
+			<h3 class="text-center text-3xl md:text-3xl">₹{{ price }}</h3>
+			<h4>/ {{ unit }}</h4>
 		</span>
 		<ul class="flex flex-col gap-3 md:gap-5 w-full">
 			<li v-for="{ icon, content } in points" :key="icon"

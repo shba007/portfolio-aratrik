@@ -22,7 +22,7 @@ const emit = defineEmits<{
 		<ul
 			class="row-start-2 md:row-start-3 col-start-2 md:col-start-3 justify-self-end flex gap-4 md:gap-8 hover:*:text-white *:transition-colors *:duration-500 *:ease-out">
 			<li>
-				<NuxtLink to="https://www.facebook.com/profile.php?id=61559002911290" target="_blank">
+				<NuxtLink to="https://www.facebook.com/redcatxpictures" target="_blank">
 					<NuxtIcon name="facebook" class="text-[28px] md:text-[40px]" />
 				</NuxtLink>
 			</li>

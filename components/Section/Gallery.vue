@@ -102,13 +102,12 @@ function autoScaling({ row, col }: {
 				@click="emit('changeTab', title)" />
 		</div>
 		<div class="relative grid grid-rows-6 sm:grid-rows-3 grid-cols-2 sm:grid-cols-4 gap-2 mx-0 sm:-mx-12">
-			<ClientOnly>
-				<NuxtImg v-for="{ position, size, url, alt } in images" :key="alt" provider="uploadcare"
-					:src="autoScaling(position) ? `${url}/-/scale_crop/1280x960/center/` : url + '/-/preview/1280x960/'"
-					:alt="`alt-${JSON.stringify(position)}`"
-					class="rounded-sm w-full h-full object-cover object-top overflow-hidden"
-					:class="objectToClass(position, size)" />
-			</ClientOnly>
+			<!-- <ClientOnly> -->
+			<NuxtImg v-for="{ position, size, url, alt } in images" :key="alt" provider="uploadcare"
+				:src="autoScaling(position) ? `${url}/-/scale_crop/1280x960/center/` : url + '/-/preview/1280x960/'" :alt="alt"
+				class="rounded-sm w-full h-full object-cover object-top overflow-hidden"
+				:class="objectToClass(position, size)" />
+			<!-- </ClientOnly> -->
 		</div>
 	</section>
 </template>

@@ -53,11 +53,13 @@ const imageSlides = computed(() => {
 		class="relative mx-0 md:-mx-12 h-screen overflow-hidden z-0 bg-light-400 dark:bg-dark-400">
 		<div v-show="isSliderVisible" ref="slider" class="relative flex gap-2 transition-all duration-[2s] ease-linear z-10"
 			:style="{ translate: `0 ${-offset}px` }">
+			<!-- <ClientOnly> -->
 			<div v-for="images, index in imageSlides" :key="index" class="flex-1 flex flex-col gap-2"
 				:class="{ 'translate-y-5': index == 0, '-translate-y-4': index == 1, 'translate-y-12': index == 2 }">
 				<NuxtImg v-for="{ id, title } in images" :key="id" provider="uploadcare" :src="id + '/-/preview/1280x960/'"
 					:alt="title" class="w-full object-cover rounded-sm" />
 			</div>
+			<!-- </ClientOnly> -->
 		</div>
 		<Transition>
 			<div v-show="isEndVisible"
