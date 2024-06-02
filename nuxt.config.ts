@@ -13,7 +13,13 @@ export default defineNuxtConfig({
     "nuxt-icons",
   ],
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/_ipx/**': { headers: { 'cache-control': 'max-age=31536000' } },
+    '/images/**': { headers: { 'cache-control': 'max-age=31536000' } },
+    '/fonts/**': { headers: { 'cache-control': 'max-age=31536000' } },
+  },
+  nitro: {
+    compressPublicAssets: true
   },
   image: {
     quality: 'smart',

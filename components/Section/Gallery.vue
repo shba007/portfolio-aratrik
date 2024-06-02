@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { breakpointsTailwind } from '@vueuse/core'
+interface Position {
+	row: { start: number; span: number };
+	col: { start: number; span: number };
+}
 
 const props = defineProps<{
 	tabs: {
@@ -10,8 +13,11 @@ const props = defineProps<{
 
 const emit = defineEmits<{ (event: 'changeTab', value: Categories): void }>()
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const mdDevices = breakpoints.greaterOrEqual('sm')
+function objectToClass({ sm, md }: { sm: Position, md: Position }, size: string) {
+	const aspectRatio = { 's': 1.57, 'm': 0.67, 'l': 1.39 }[size]
+	return `row-start-${sm.row.start} md:row-start-${md.row.start} row-span-${sm.row.span} md:row-span-${md.row.span} 
+	col-start-${sm.col.start} md:col-start-${md.col.start} col-span-${sm.col.span} md:col-span-${md.col.span} aspect-[${aspectRatio}]`
+}
 
 const categoryImages = {
 	food: getImages(['Food-002-001', 'Food-005-001', 'Food-003-001',
@@ -21,78 +27,77 @@ const categoryImages = {
 }
 
 const images = computed<{
-	position: {
-		row: { start: number; span: number };
-		col: { start: number; span: number };
-	};
-	size: string;
 	url: string;
-	alt: string
+	alt: string;
+	dynamicClass: string;
+	autoScale: boolean;
 }[]>(() => (
 	[
 		{
-			position: { row: { start: 1, span: 2 }, col: { start: 1, span: 2 } },
+			position: {
+				'sm': { row: { start: 1, span: 2 }, col: { start: 1, span: 2 } },
+				'md': { row: { start: 1, span: 2 }, col: { start: 1, span: 2 } }
+			},
 			size: 'l',
+			autoScale: true
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 3, span: 1 }, col: { start: 1, span: 1 } } : { row: { start: 1, span: 1 }, col: { start: 3, span: 1 } },
+			position: {
+				'sm': { row: { start: 3, span: 1 }, col: { start: 1, span: 1 } },
+				'md': { row: { start: 1, span: 1 }, col: { start: 3, span: 1 } }
+			},
 			size: 's',
+			autoScale: true
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 4, span: 1 }, col: { start: 1, span: 1 } } : { row: { start: 1, span: 1 }, col: { start: 4, span: 1 } },
+			position: {
+				'sm': { row: { start: 4, span: 1 }, col: { start: 1, span: 1 } },
+				'md': { row: { start: 1, span: 1 }, col: { start: 4, span: 1 } }
+			},
 			size: 's',
+			autoScale: true
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 5, span: 1 }, col: { start: 2, span: 1 } } : { row: { start: 3, span: 1 }, col: { start: 1, span: 1 } },
+			position: {
+				'sm': { row: { start: 5, span: 1 }, col: { start: 2, span: 1 } },
+				'md': { row: { start: 3, span: 1 }, col: { start: 1, span: 1 } }
+			},
 			size: 's',
+			autoScale: true
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 6, span: 1 }, col: { start: 2, span: 1 } } : { row: { start: 3, span: 1 }, col: { start: 2, span: 1 } },
+			position: {
+				'sm': { row: { start: 6, span: 1 }, col: { start: 2, span: 1 } },
+				'md': { row: { start: 3, span: 1 }, col: { start: 2, span: 1 } }
+			},
 			size: 's',
+			autoScale: true
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 3, span: 2 }, col: { start: 2, span: 1 } } : { row: { start: 2, span: 2 }, col: { start: 3, span: 1 } },
+			position: {
+				'sm': { row: { start: 3, span: 2 }, col: { start: 2, span: 1 } },
+				'md': { row: { start: 2, span: 2 }, col: { start: 3, span: 1 } }
+			},
 			size: 'm',
+			autoScale: false
 		},
 		{
-			position: !mdDevices.value ? { row: { start: 5, span: 2 }, col: { start: 1, span: 1 } } : { row: { start: 2, span: 2 }, col: { start: 4, span: 1 } },
+			position: {
+				'sm': { row: { start: 5, span: 2 }, col: { start: 1, span: 1 } },
+				'md': { row: { start: 2, span: 2 }, col: { start: 4, span: 1 } }
+			},
 			size: 'm',
+			autoScale: false
 		},
-	].map((image: any, index) => {
-		image.url = categoryImages[props.activeTab][index].id
-		image.alt = categoryImages[props.activeTab][index].title
-		return image
+	].map((image, index) => {
+		return {
+			url: categoryImages[props.activeTab][index].id,
+			alt: categoryImages[props.activeTab][index].title,
+			dynamicClass: objectToClass(image.position, image.size),
+			autoScale: image.autoScale
+		}
 	})
 ))
-
-function objectToClass({ row, col }: {
-	row: { start: number; span: number };
-	col: { start: number; span: number };
-}, size: string) {
-	const aspectRatio = { 's': 1.57, 'm': 0.67, 'l': 1.39 }[size]
-	return `row-start-${row.start} row-span-${row.span} col-start-${col.start} col-span-${col.span} aspect-[${aspectRatio}]`
-}
-
-function autoScaling({ row, col }: {
-	row: { start: number; span: number };
-	col: { start: number; span: number };
-}) {
-	if (mdDevices.value) {
-		if (row.start === 1 && col.start > 1)
-			return true
-		else if (row.start === 3 && col.start < 3)
-			return true
-		else
-			return false
-	} else {
-		if (col.start === 1 && row.start > 2 && row.start < 5)
-			return true
-		else if (col.start === 2 && row.start > 4)
-			return true
-		else
-			return false
-	}
-}
 </script>
 
 <template>
@@ -102,12 +107,9 @@ function autoScaling({ row, col }: {
 				@click="emit('changeTab', title)" />
 		</div>
 		<div class="relative grid grid-rows-6 sm:grid-rows-3 grid-cols-2 sm:grid-cols-4 gap-2 mx-0 sm:-mx-12">
-			<!-- <ClientOnly> -->
-			<NuxtImg v-for="{ position, size, url, alt } in images" :key="alt" provider="uploadcare"
-				:src="autoScaling(position) ? `${url}/-/scale_crop/1280x960/center/` : url + '/-/preview/1280x960/'" :alt="alt"
-				class="rounded-sm w-full h-full object-cover object-top overflow-hidden"
-				:class="objectToClass(position, size)" />
-			<!-- </ClientOnly> -->
+			<NuxtImg v-for="{ url, alt, dynamicClass, autoScale } in images" :key="url" provider="uploadcare"
+				:src="autoScale ? `${url}/-/scale_crop/1280x960/center/` : url + '/-/preview/1280x960/'" :alt="alt"
+				class="rounded-sm w-full h-full object-cover object-top overflow-hidden" :class="dynamicClass" />
 		</div>
 	</section>
 </template>

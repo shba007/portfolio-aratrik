@@ -11,6 +11,7 @@ const images = getImages([
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const mdDevices = breakpoints.greaterOrEqual('sm')
+
 const container = ref<HTMLDivElement | null>(null)
 const { height: containerHeight } = useElementSize(container)
 const slider = ref<HTMLDivElement | null>(null)
