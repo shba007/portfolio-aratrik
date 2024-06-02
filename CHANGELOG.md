@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.4.2
+
+### Patch Changes
+
+- 106be4c: seo: fix h tag sequence, img alt tag fix, hero section img dim added
+
 ## 1.4.1
 
 ### Patch Changes
