@@ -1,5 +1,11 @@
 # portfolio-artarik
 
+## 1.4.3
+
+### Patch Changes
+
+- 6472d4f: fix: server rendering gallary issue and improved seo
+
 ## 1.4.2
 
 ### Patch Changes
